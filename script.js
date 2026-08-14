@@ -1,46 +1,46 @@
-
-/* =========================
+/* =================================
    TYPING EFFECT
-========================= */
+================================= */
 
-const typingText = document.getElementById("typing-text");
+const typing = document.getElementById("typing");
 
-const texts = [
+const words = [
     "Developer",
     "Web Developer",
     "Anime Enjoyer",
-    "Code & Create",
+    "Digital Creator",
     "Just a curious human."
 ];
 
-let textIndex = 0;
+let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
-function typeEffect() {
 
-    const currentText = texts[textIndex];
+function type() {
+
+    const word = words[wordIndex];
 
     if (!deleting) {
 
-        typingText.textContent =
-            currentText.substring(0, charIndex + 1);
+        typing.textContent =
+            word.substring(0, charIndex + 1);
 
         charIndex++;
 
-        if (charIndex === currentText.length) {
+        if (charIndex === word.length) {
 
             deleting = true;
 
-            setTimeout(typeEffect, 1800);
+            setTimeout(type, 1800);
 
             return;
         }
 
     } else {
 
-        typingText.textContent =
-            currentText.substring(0, charIndex - 1);
+        typing.textContent =
+            word.substring(0, charIndex - 1);
 
         charIndex--;
 
@@ -48,10 +48,10 @@ function typeEffect() {
 
             deleting = false;
 
-            textIndex++;
+            wordIndex++;
 
-            if (textIndex >= texts.length) {
-                textIndex = 0;
+            if (wordIndex >= words.length) {
+                wordIndex = 0;
             }
 
         }
@@ -59,28 +59,31 @@ function typeEffect() {
     }
 
     setTimeout(
-        typeEffect,
-        deleting ? 45 : 90
+        type,
+        deleting ? 45 : 85
     );
 }
 
-typeEffect();
+type();
 
 
-/* =========================
-   FOOTER YEAR
-========================= */
+/* =================================
+   YEAR
+================================= */
 
 document.getElementById("year").textContent =
     new Date().getFullYear();
 
 
-/* =========================
+/* =================================
    SCROLL REVEAL
-========================= */
+================================= */
 
-const sections =
-    document.querySelectorAll(".section");
+const elements =
+    document.querySelectorAll(
+        ".section, .project, .skill-card"
+    );
+
 
 const observer =
     new IntersectionObserver(
@@ -90,7 +93,10 @@ const observer =
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("visible");
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
 
                 }
 
@@ -102,6 +108,17 @@ const observer =
         }
     );
 
-sections.forEach(section => {
-    observer.observe(section);
+
+elements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+        "translateY(25px)";
+
+    element.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+    observer.observe(element);
+
 });
