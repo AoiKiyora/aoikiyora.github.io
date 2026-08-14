@@ -250,6 +250,24 @@ body.light-mode #header {
     color: var(--text-primary);
 }
 
+.lang-toggle {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.lang-toggle:hover {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    box-shadow: var(--glow-blue);
+}
+
 /* ========================================
    5. HERO
    ======================================== */
