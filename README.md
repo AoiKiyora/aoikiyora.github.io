@@ -1,1 +1,1 @@
-<img src="assets/Rintaro%20Tsumugi.jpg" align="right">
+<img src="assets/page.png" align="right">
