@@ -122,15 +122,15 @@ const projects = [
 const animeCharacters = [
     {
         name: 'Rintaro Tsumugi',
-        anime: 'Anime information',
+        anime: 'Character information',
         image: 'assets/Rintaro Tsumugi.jpg',
-        description: 'Character information placeholder. You can update this in script.js.'
+        description: 'I will be there for you, right here, and in the future... You have done so much for me, so now, let me protect you. Let me share your troubles and responsibilities. From now on, I will support you with everything I have.'
     },
     {
         name: 'Waguri Kaoruko',
-        anime: 'Anime information',
+        anime: 'Character information',
         image: 'assets/Waguri Kaoruko.jpg',
-        description: 'Character information placeholder. You can update this in script.js.'
+        description: 'If you are willing to go out with me, I could not be happier to go out with you! Because I love you, too, Rintaro-kun!'
     }
 ];
 
@@ -230,29 +230,29 @@ const animeData = {
     en: [
         {
             name: 'Rintaro Tsumugi',
-            anime: 'Anime information',
+            anime: 'Character information',
             image: 'assets/Rintaro Tsumugi.jpg',
-            description: 'Character information placeholder. You can update this in script.js.'
+            description: 'I will be there for you, right here, and in the future... You have done so much for me, so now, let me protect you. Let me share your troubles and responsibilities. From now on, I will support you with everything I have.'
         },
         {
             name: 'Waguri Kaoruko',
-            anime: 'Anime information',
+            anime: 'Character information',
             image: 'assets/Waguri Kaoruko.jpg',
-            description: 'Character information placeholder. You can update this in script.js.'
+            description: 'If you are willing to go out with me, I could not be happier to go out with you! Because I love you, too, Rintaro-kun!'
         }
     ],
     vi: [
         {
             name: 'Rintaro Tsumugi',
-            anime: 'Thông tin anime',
+            anime: 'Thông tin nhân vật',
             image: 'assets/Rintaro Tsumugi.jpg',
-            description: 'Thông tin nhân vật placeholder. Bạn có thể cập nhật trong script.js.'
+            description: 'Tớ sẽ luôn ở bên cậu, ngay tại đây, và cả trong tương lai nữa... Cậu đã làm cho tớ nhiều điều như vậy, nên bây giờ, hãy để tớ bảo vệ cậu. Hãy để tớ san sẻ những phiền muộn và trách nhiệm cùng cậu. Từ giờ trở đi, tớ sẽ hỗ trợ cậu với tất cả những gì tớ có.'
         },
         {
             name: 'Waguri Kaoruko',
-            anime: 'Thông tin anime',
+            anime: 'Thông tin nhân vật',
             image: 'assets/Waguri Kaoruko.jpg',
-            description: 'Thông tin nhân vật placeholder. Bạn có thể cập nhật trong script.js.'
+            description: 'Nếu cậu đồng ý hẹn hò với tớ, tớ sẽ rất vui! Bởi vì tớ cũng yêu cậu, Rintaro-kun!'
         }
     ]
 };
