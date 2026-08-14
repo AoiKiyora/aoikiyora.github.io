@@ -30,6 +30,7 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">VN</button>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☾</button>
                 <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
             </div>
@@ -42,7 +43,7 @@
         <section id="home" class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <p class="hero-greeting">HELLO, I'M</p>
+                <p class="hero-greeting" data-i18n="hero_greeting">HELLO, I'M</p>
                 <h1 class="hero-name">
                     <span class="hero-first">AOI</span>
                     <span class="hero-last">KIYORA</span>
@@ -56,10 +57,10 @@
                     <span class="role" id="typing-text"></span>
                     <span class="cursor">|</span>
                 </div>
-                <p class="hero-tagline">Code. Create. Anime. Repeat.</p>
+                <p class="hero-tagline" data-i18n="hero_tagline">Code. Create. Anime. Repeat.</p>
                 <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">EXPLORE</a>
-                    <a href="https://github.com/AOIKIYORA" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GITHUB</a>
+                    <a href="#about" class="btn btn-primary" data-i18n="hero_explore">EXPLORE</a>
+                    <a href="https://github.com/AOIKIYORA" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero_github">GITHUB</a>
                 </div>
             </div>
             <div class="hero-scroll">
@@ -74,14 +75,14 @@
         <!-- About Section -->
         <section id="about" class="section about">
             <div class="container">
-                <h2 class="section-title">
+                <h2 class="section-title" data-i18n="about_title">
                     <span class="title-number">01.</span> About Me
                 </h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>I'm interested in programming, web development, technology and anime.</p>
-                        <p>I enjoy learning new things and building projects to improve my coding skills.</p>
-                        <p>Currently focusing on frontend development and creating cool web experiences.</p>
+                        <p data-i18n="about_p1">I'm interested in programming, web development, technology and anime.</p>
+                        <p data-i18n="about_p2">I enjoy learning new things and building projects to improve my coding skills.</p>
+                        <p data-i18n="about_p3">Currently focusing on frontend development and creating cool web experiences.</p>
                     </div>
                 </div>
             </div>
@@ -90,7 +91,7 @@
         <!-- Skills Section -->
         <section id="skills" class="section skills">
             <div class="container">
-                <h2 class="section-title">
+                <h2 class="section-title" data-i18n="skills_title">
                     <span class="title-number">02.</span> Skills
                 </h2>
                 <div class="skills-grid" id="skills-grid">
@@ -102,7 +103,7 @@
         <!-- Projects Section -->
         <section id="projects" class="section projects">
             <div class="container">
-                <h2 class="section-title">
+                <h2 class="section-title" data-i18n="projects_title">
                     <span class="title-number">03.</span> Projects
                 </h2>
                 <div class="projects-grid" id="projects-grid">
@@ -114,7 +115,7 @@
         <!-- Anime Section -->
         <section id="anime" class="section anime">
             <div class="container">
-                <h2 class="section-title">
+                <h2 class="section-title" data-i18n="anime_title">
                     <span class="title-number">04.</span> Anime World
                 </h2>
                 <div class="anime-grid" id="anime-grid">
@@ -126,7 +127,7 @@
         <!-- GitHub Section -->
         <section id="github" class="section github">
             <div class="container">
-                <h2 class="section-title">
+                <h2 class="section-title" data-i18n="github_title">
                     <span class="title-number">05.</span> GitHub
                 </h2>
                 <div class="terminal-window">
@@ -134,7 +135,7 @@
                         <span class="terminal-dot red"></span>
                         <span class="terminal-dot yellow"></span>
                         <span class="terminal-dot green"></span>
-                        <span class="terminal-title">AOI@GITHUB:~</span>
+                        <span class="terminal-title" data-i18n="terminal_title">AOI@GITHUB:~</span>
                     </div>
                     <div class="terminal-body">
                         <p class="terminal-line"><span class="terminal-prompt">AOI@GITHUB:~$</span> repositories</p>
@@ -142,33 +143,33 @@
                         <p class="terminal-line"><span class="terminal-prompt">AOI@GITHUB:~$</span> code</p>
                         <p class="terminal-line"><span class="terminal-prompt">AOI@GITHUB:~$</span> anime</p>
                         <p class="terminal-line">&nbsp;</p>
-                        <p class="terminal-line">Type 'help' in terminal for available commands.</p>
+                        <p class="terminal-line" data-i18n="terminal_hint">Type 'help' in terminal for available commands.</p>
                     </div>
                 </div>
-                <a href="https://github.com/AOIKIYORA" target="_blank" rel="noopener noreferrer" class="btn btn-primary">VIEW GITHUB</a>
+                <a href="https://github.com/AOIKIYORA" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="github_view">VIEW GITHUB</a>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section contact">
             <div class="container">
-                <h2 class="section-title">
+                <h2 class="section-title" data-i18n="contact_title">
                     <span class="title-number">06.</span> Contact
                 </h2>
                 <div class="contact-content">
-                    <p class="contact-text">Get In Touch</p>
+                    <p class="contact-text" data-i18n="contact_text">Get In Touch</p>
                     <div class="contact-links">
                         <a href="https://github.com/AOIKIYORA" target="_blank" rel="noopener noreferrer" class="contact-btn">
                             <span class="contact-icon">⌘</span>
-                            <span>GitHub</span>
+                            <span data-i18n="contact_github">GitHub</span>
                         </a>
                         <a href="mailto:YOUR_EMAIL" class="contact-btn">
                             <span class="contact-icon">✉</span>
-                            <span>Email</span>
+                            <span data-i18n="contact_email">Email</span>
                         </a>
                         <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="contact-btn">
                             <span class="contact-icon">●</span>
-                            <span>Discord</span>
+                            <span data-i18n="contact_discord">Discord</span>
                         </a>
                     </div>
                 </div>
@@ -180,9 +181,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text">© 2026 Aoi Kiyora</p>
-            <p class="footer-sub">Made with HTML • CSS • JavaScript</p>
-            <p class="footer-tagline">Code. Create. Anime. Repeat.</p>
+            <p class="footer-text" data-i18n="footer_text">© 2026 Aoi Kiyora</p>
+            <p class="footer-sub" data-i18n="footer_sub">Made with HTML • CSS • JavaScript</p>
+            <p class="footer-tagline" data-i18n="footer_tagline">Code. Create. Anime. Repeat.</p>
         </div>
     </footer>
 
@@ -195,12 +196,12 @@
             <div class="terminal-header">
                 <span class="terminal-dot red"></span>
                 <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-                <span class="terminal-title">TERMINAL — Ctrl+K to close</span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title" data-i18n="egg_terminal_title">TERMINAL — Ctrl+K to close</span>
             </div>
             <div class="terminal-body terminal-egg-body" id="terminal-output">
-                <p class="terminal-line">Welcome to Aoi Kiyora's terminal.</p>
-                <p class="terminal-line">Type <span class="terminal-cmd">help</span> to see available commands.</p>
+                <p class="terminal-line" data-i18n="egg_welcome">Welcome to Aoi Kiyora's terminal.</p>
+                <p class="terminal-line" data-i18n="egg_help_hint">Type <span class="terminal-cmd">help</span> to see available commands.</p>
                 <p class="terminal-line">&nbsp;</p>
             </div>
             <div class="terminal-input-line">
