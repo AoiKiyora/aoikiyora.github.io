@@ -10,6 +10,80 @@ const CONFIG = {
     pauseDuration: 2000,
 };
 
+const translations = {
+    en: {
+        hero_greeting: "HELLO, I'M",
+        hero_tagline: "Code. Create. Anime. Repeat.",
+        hero_explore: "EXPLORE",
+        hero_github: "GITHUB",
+        about_title: "About Me",
+        about_p1: "I'm interested in programming, web development, technology and anime.",
+        about_p2: "I enjoy learning new things and building projects to improve my coding skills.",
+        about_p3: "Currently focusing on frontend development and creating cool web experiences.",
+        skills_title: "Skills",
+        projects_title: "Projects",
+        anime_title: "Anime World",
+        github_title: "GitHub",
+        github_view: "VIEW GITHUB",
+        terminal_title: "AOI@GITHUB:~",
+        terminal_hint: "Type 'help' in terminal for available commands.",
+        contact_title: "Contact",
+        contact_text: "Get In Touch",
+        contact_github: "GitHub",
+        contact_email: "Email",
+        contact_discord: "Discord",
+        footer_text: "© 2026 Aoi Kiyora",
+        footer_sub: "Made with HTML • CSS • JavaScript",
+        footer_tagline: "Code. Create. Anime. Repeat.",
+        egg_terminal_title: "TERMINAL — Ctrl+K to close",
+        egg_welcome: "Welcome to Aoi Kiyora's terminal.",
+        egg_help_hint: "Type <span class=\"terminal-cmd\">help</span> to see available commands.",
+    },
+    vi: {
+        hero_greeting: "XIN CHÀO, TÔI LÀ",
+        hero_tagline: "Code. Create. Anime. Repeat.",
+        hero_explore: "KHÁM PHÁ",
+        hero_github: "GITHUB",
+        about_title: "Giới Thiệu",
+        about_p1: "Tôi quan tâm đến lập trình, phát triển web, công nghệ và anime.",
+        about_p2: "Tôi thích học những điều mới và xây dựng dự án để cải thiện kỹ năng lập trình.",
+        about_p3: "Hiện đang tập trung vào phát triển frontend và tạo những trải nghiệm web độc đáo.",
+        skills_title: "Kỹ Năng",
+        projects_title: "Dự Án",
+        anime_title: "Thế Giới Anime",
+        github_title: "GitHub",
+        github_view: "XEM GITHUB",
+        terminal_title: "AOI@GITHUB:~",
+        terminal_hint: "Nhập 'help' trong terminal để xem các lệnh khả dụng.",
+        contact_title: "Liên Hệ",
+        contact_text: "Liên Hệ",
+        contact_github: "GitHub",
+        contact_email: "Email",
+        contact_discord: "Discord",
+        footer_text: "© 2026 Aoi Kiyora",
+        footer_sub: "Được tạo bằng HTML • CSS • JavaScript",
+        footer_tagline: "Code. Create. Anime. Repeat.",
+        egg_terminal_title: "TERMINAL — Ctrl+K để đóng",
+        egg_welcome: "Chào mừng đến terminal của Aoi Kiyora.",
+        egg_help_hint: "Nhập <span class=\"terminal-cmd\">help</span> để xem các lệnh khả dụng.",
+    }
+};
+
+const skillTranslations = {
+    en: {
+        'FRONTEND': 'FRONTEND',
+        'DATABASE': 'DATABASE',
+        'TOOLS': 'TOOLS',
+    },
+    vi: {
+        'FRONTEND': 'FRONTEND',
+        'DATABASE': 'DATABASE',
+        'TOOLS': 'CÔNG CỤ',
+    }
+};
+
+let currentLang = 'en';
+
 /* ========================================
    2. PROJECT DATA
    ======================================== */
@@ -94,17 +168,127 @@ const skills = {
 };
 
 /* ========================================
+   5b. LANGUAGE DATA
+   ======================================== */
+
+const projectData = {
+    en: [
+        {
+            name: 'Example Project',
+            description: 'This is a sample project. Replace with your actual projects.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            github: '#',
+            demo: '#',
+            icon: '💻'
+        },
+        {
+            name: 'Another Project',
+            description: 'Another example project. Update the data in script.js to add your real projects.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            github: '#',
+            demo: '#',
+            icon: '🚀'
+        },
+        {
+            name: 'Web App',
+            description: 'Sample web application. Edit this section in script.js with your own projects.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            github: '#',
+            demo: '#',
+            icon: '⚡'
+        }
+    ],
+    vi: [
+        {
+            name: 'Dự Án Mẫu',
+            description: 'Đây là dự án mẫu. Hãy thay thế bằng các dự án thực tế của bạn.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            github: '#',
+            demo: '#',
+            icon: '💻'
+        },
+        {
+            name: 'Dự Án Khác',
+            description: 'Dự án mẫu khác. Cập nhật dữ liệu trong script.js để thêm dự án thật.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            github: '#',
+            demo: '#',
+            icon: '🚀'
+        },
+        {
+            name: 'Ứng Dụng Web',
+            description: 'Ứng dụng web mẫu. Chỉnh sửa phần này trong script.js với dự án của bạn.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            github: '#',
+            demo: '#',
+            icon: '⚡'
+        }
+    ]
+};
+
+const animeData = {
+    en: [
+        {
+            name: 'Rintaro Tsumugi',
+            anime: 'Anime information',
+            image: 'assets/Rintaro Tsumugi.jpg',
+            description: 'Character information placeholder. You can update this in script.js.'
+        },
+        {
+            name: 'Waguri Kaoruko',
+            anime: 'Anime information',
+            image: 'assets/Waguri Kaoruko.jpg',
+            description: 'Character information placeholder. You can update this in script.js.'
+        }
+    ],
+    vi: [
+        {
+            name: 'Rintaro Tsumugi',
+            anime: 'Thông tin anime',
+            image: 'assets/Rintaro Tsumugi.jpg',
+            description: 'Thông tin nhân vật placeholder. Bạn có thể cập nhật trong script.js.'
+        },
+        {
+            name: 'Waguri Kaoruko',
+            anime: 'Thông tin anime',
+            image: 'assets/Waguri Kaoruko.jpg',
+            description: 'Thông tin nhân vật placeholder. Bạn có thể cập nhật trong script.js.'
+        }
+    ]
+};
+
+const quoteData = {
+    en: [
+        { text: 'People die when they are killed.', author: '— Anime' },
+        { text: 'Believe in yourself. Not in the you who believes in me.', author: '— Anime' },
+        { text: 'The world isn\'t perfect. But it\'s there for us trying the best it can.', author: '— Anime' },
+        { text: 'Hard work is worthless for those that don\'t believe in themselves.', author: '— Anime' },
+        { text: 'No matter how hard or impossible it is, never lose sight of your goal.', author: '— Anime' },
+        { text: 'If you don\'t take risks, you can\'t create a future.', author: '— Anime' },
+    ],
+    vi: [
+        { text: 'Người ta chết khi bị giết.', author: '— Anime' },
+        { text: 'Tin tưởng vào chính bạn. Không phải vào bạn của tôi.', author: '— Anime' },
+        { text: 'Thế giới không hoàn hảo. Nhưng nó ở đó để chúng ta cố gắng hết sức.', author: '— Anime' },
+        { text: 'Làm việc chăm chỉ vô nghĩa với những ai không tin vào bản thân.', author: '— Anime' },
+        { text: 'Dù khó đến đâu, đừng bao giờ mất mục tiêu khỏi tầm nhìn.', author: '— Anime' },
+        { text: 'Nếu bạn không chấp nhận rủi ro, bạn không thể tạo ra tương lai.', author: '— Anime' },
+    ]
+};
+
+/* ========================================
    6. RENDER FUNCTIONS
    ======================================== */
 
-function renderSkills() {
+function renderSkills(lang = 'en') {
     const grid = document.getElementById('skills-grid');
     if (!grid) return;
 
     let html = '';
     for (const [group, items] of Object.entries(skills)) {
+        const groupName = skillTranslations[lang]?.[group] || group;
         html += `<div class="skill-group reveal">
-            <h3>${group}</h3>
+            <h3>${groupName}</h3>
             <div class="skill-cards">`;
         items.forEach(skill => {
             html += `
@@ -118,12 +302,13 @@ function renderSkills() {
     grid.innerHTML = html;
 }
 
-function renderProjects() {
+function renderProjects(lang = 'en') {
     const grid = document.getElementById('projects-grid');
     if (!grid) return;
 
+    const data = projectData[lang] || projectData['en'];
     let html = '';
-    projects.forEach(project => {
+    data.forEach(project => {
         const techs = project.technologies.map(t => `<span>${t}</span>`).join('');
         html += `
             <div class="project-card reveal">
@@ -142,12 +327,13 @@ function renderProjects() {
     grid.innerHTML = html;
 }
 
-function renderAnime() {
+function renderAnime(lang = 'en') {
     const grid = document.getElementById('anime-grid');
     if (!grid) return;
 
+    const data = animeData[lang] || animeData['en'];
     let html = '';
-    animeCharacters.forEach(char => {
+    data.forEach(char => {
         html += `
             <div class="anime-card reveal">
                 <div class="anime-image-wrap">
@@ -225,12 +411,19 @@ function initTypingEffect() {
     const el = document.getElementById('typing-text');
     if (!el) return;
 
-    const phrases = ['IT Developer', 'Anime Fan', 'Creative Coder'];
+    const phrasesEN = ['IT Developer', 'Anime Fan', 'Creative Coder'];
+    const phrasesVI = ['Lập Trình Viên', 'Fan Anime', 'Creative Coder'];
+
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
 
+    function getPhrases() {
+        return currentLang === 'vi' ? phrasesVI : phrasesEN;
+    }
+
     function type() {
+        const phrases = getPhrases();
         const current = phrases[phraseIndex];
         if (isDeleting) {
             el.textContent = current.substring(0, charIndex - 1);
@@ -276,7 +469,53 @@ function initScrollReveal() {
 }
 
 /* ========================================
-   11. THEME
+   11. LANGUAGE
+   ======================================== */
+
+function updateStaticText(lang) {
+    const t = translations[lang] || translations['en'];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+            el.innerHTML = t[key];
+        }
+    });
+}
+
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+
+    const toggle = document.getElementById('lang-toggle');
+    if (toggle) {
+        toggle.textContent = lang === 'vi' ? 'EN' : 'VN';
+    }
+
+    updateStaticText(lang);
+    renderSkills(lang);
+    renderProjects(lang);
+    renderAnime(lang);
+}
+
+function initLanguage() {
+    const toggle = document.getElementById('lang-toggle');
+    const saved = localStorage.getItem('lang');
+
+    if (saved === 'vi') {
+        currentLang = 'vi';
+        if (toggle) toggle.textContent = 'EN';
+    }
+
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const next = currentLang === 'en' ? 'vi' : 'en';
+        switchLanguage(next);
+    });
+}
+
+/* ========================================
+   14. THEME
    ======================================== */
 
 function initTheme() {
@@ -300,7 +539,7 @@ function initTheme() {
 }
 
 /* ========================================
-   12. TERMINAL EASTER EGG
+   15. TERMINAL EASTER EGG
    ======================================== */
 
 function initTerminal() {
@@ -312,14 +551,17 @@ function initTerminal() {
 
     const commands = {
         help: () => {
+            if (currentLang === 'vi') {
+                return `Các lệnh khả dụng:\n  about      - Giới thiệu\n  skills     - Kỹ năng\n  projects   - Dự án\n  anime      - Anime\n  github     - GitHub\n  contact    - Liên hệ\n  clear      - Xóa màn hình`;
+            }
             return `Available commands:\n  about      - About me\n  skills     - My skills\n  projects   - My projects\n  anime      - Anime collection\n  github     - GitHub profile\n  contact    - Contact info\n  clear      - Clear terminal`;
         },
-        about: () => 'I am Aoi Kiyora — IT Developer and Anime Fan.',
-        skills: () => 'HTML5, CSS3, JavaScript, SQL Server, Git, GitHub, VS Code.',
-        projects: () => 'Check the Projects section on this website!',
-        anime: () => 'Anime lover. Check the Anime section for my collection.',
+        about: () => currentLang === 'vi' ? 'Tôi là Aoi Kiyora — Lập trình viên IT và Fan Anime.' : 'I am Aoi Kiyora — IT Developer and Anime Fan.',
+        skills: () => currentLang === 'vi' ? 'HTML5, CSS3, JavaScript, SQL Server, Git, GitHub, VS Code.' : 'HTML5, CSS3, JavaScript, SQL Server, Git, GitHub, VS Code.',
+        projects: () => currentLang === 'vi' ? 'Xem phần Dự Án trên website này!' : 'Check the Projects section on this website!',
+        anime: () => currentLang === 'vi' ? 'Người yêu anime. Xem phần Anime để xem bộ sưu tập.' : 'Anime lover. Check the Anime section for my collection.',
         github: () => `Visit: ${CONFIG.githubUrl}`,
-        contact: () => 'GitHub, Email, Discord — see Contact section.',
+        contact: () => currentLang === 'vi' ? 'GitHub, Email, Discord — xem phần Liên Hệ.' : 'GitHub, Email, Discord — see Contact section.',
         clear: () => '__CLEAR__'
     };
 
@@ -377,7 +619,7 @@ function initTerminal() {
 }
 
 /* ========================================
-   13. BACK TO TOP
+   16. BACK TO TOP
    ======================================== */
 
 function initBackToTop() {
@@ -398,13 +640,14 @@ function initBackToTop() {
 }
 
 /* ========================================
-   14. INIT
+   17. INIT
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderSkills();
-    renderProjects();
-    renderAnime();
+    initLanguage();
+    renderSkills(currentLang);
+    renderProjects(currentLang);
+    renderAnime(currentLang);
     initNavigation();
     initMobileMenu();
     initTypingEffect();
