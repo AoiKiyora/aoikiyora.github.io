@@ -3,453 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Aoi Kiyora — Anime Developer</title>
-
-    <meta
-        name="description"
-        content="Aoi Kiyora — Developer, anime enjoyer and digital creator."
-    >
-
-    <link rel="icon" href="assets/Rintaro Tsumugi.jpg">
-
+    <title>Aoi Kiyora — IT Developer × Anime Fan</title>
+    <meta name="description" content="Aoi Kiyora — IT Developer, Anime Enthusiast, and Digital Creator. Building things with code, fueled by curiosity and anime.">
+    <link rel="icon" href="assets/Rintaro%20Tsumugi.jpg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
+<body data-theme="dark">
 
     <!-- Background -->
     <div class="bg">
         <div class="gradient gradient-one"></div>
         <div class="gradient gradient-two"></div>
         <div class="stars"></div>
+        <canvas id="particles"></canvas>
     </div>
 
-    <!-- Navigation -->
-    <header class="navbar">
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <a href="#" class="logo">Aoi<span>.</span></a>
 
-        <a href="#" class="logo">
-            Aoi<span>.</span>
-        </a>
-
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
+        <nav class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#anime" class="nav-link">Anime</a>
+            <a href="#github" class="nav-link">GitHub</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
-        <a
-            href="https://github.com/aoikiyora"
-            target="_blank"
-            class="nav-github"
-        >
-            GitHub ↗
-        </a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
 
+            <a href="https://github.com/aoikiyora" target="_blank" rel="noopener" class="nav-github" aria-label="GitHub Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
-
     <main>
-
         <!-- HERO -->
-        <section class="hero">
-
+        <section class="hero" id="home">
             <div class="hero-content">
-
                 <div class="status">
                     <span></span>
                     Available for new projects
                 </div>
 
-                <p class="small-title">
-                    Hello, I'm
-                </p>
+                <p class="greeting">Hi, I'm Aoi Kiyora 👋</p>
 
                 <h1>
-                    Aoi
-                    <span>Kiyora</span>
+                    <span class="hero-line">IT Developer</span>
+                    <span class="hero-divider">×</span>
+                    <span class="hero-line">Anime Enthusiast</span>
                 </h1>
 
-                <div class="typing">
-                    <span id="typing"></span>
-                    <b>|</b>
-                </div>
+                <p class="subtitle">Building things with code,<br>fueled by curiosity and anime.</p>
 
-                <p class="description">
-                    A casual developer who loves building things,
-                    exploring technology and getting lost in anime.
-                </p>
+                <div class="typing">
+                    <span class="typing-prefix">&gt;</span>
+                    <span id="typing"></span>
+                    <b class="cursor">|</b>
+                </div>
 
                 <div class="buttons">
-
                     <a href="#projects" class="btn primary">
-                        Explore my work
+                        View My Projects
                         <span>↗</span>
                     </a>
-
-                    <a
-                        href="https://github.com/aoikiyora"
-                        target="_blank"
-                        class="btn glass"
-                    >
-                        GitHub
+                    <a href="https://github.com/aoikiyora" target="_blank" rel="noopener" class="btn glass">
+                        GitHub Profile
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
-
                 </div>
-
             </div>
 
-
-            <!-- Character -->
+            <!-- Character Card -->
             <div class="character-wrapper">
-
                 <div class="character-glow"></div>
-
                 <div class="character-card">
-
                     <div class="card-line"></div>
-
                     <img
-                        src="assets/Rintaro Tsumugi.jpg"
-                        alt="Aoi Kiyora"
+                        src="assets/Rintaro%20Tsumugi.jpg"
+                        alt="Aoi Kiyora Avatar"
                         class="character"
+                        loading="eager"
                     >
-
                     <div class="character-info">
-
                         <span>AOI KIYORA</span>
-
-                        <small>
-                            Developer / Creator
-                        </small>
-
+                        <small>Developer / Creator</small>
                     </div>
-
+                    <div class="card-border-glow"></div>
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- ABOUT -->
         <section id="about" class="section">
-
             <div class="section-header">
-
                 <span>01</span>
-
                 <div>
                     <p>GET TO KNOW ME</p>
-                    <h2>About me</h2>
+                    <h2>About Me</h2>
                 </div>
-
             </div>
-
 
             <div class="about-grid">
-
                 <div class="about-main glass-card">
-
-                    <p class="quote">
-                        "Build things you want to exist."
-                    </p>
-
-                    <p>
-                        Hi! I'm <strong>Aoi Kiyora</strong>, a developer
-                        who enjoys turning random ideas into actual projects.
-                    </p>
-
-                    <p>
-                        I mostly work with web technologies and databases,
-                        but I'm always curious about learning something new.
-                    </p>
-
-                    <p class="muted">
-                        When I'm not coding, you'll probably find me
-                        watching anime, listening to music or discovering
-                        another fictional character to simp for.
-                    </p>
-
+                    <p class="quote">"Build things you want to exist."</p>
+                    <p>I'm a developer who enjoys building websites, learning new technologies and exploring the world of anime.</p>
+                    <p>I like turning ideas into small projects, experimenting with code and creating things that are both useful and fun.</p>
+                    <p class="muted">Always curious, always learning. When I'm not coding, I'm probably watching anime or discovering new fictional characters.</p>
                 </div>
-
 
                 <div class="about-side">
-
-                    <div class="mini-card glass-card">
-
-                        <span class="icon">⌘</span>
-
+                    <div class="stat-card glass-card">
+                        <span class="stat-icon">💻</span>
                         <div>
-                            <small>Currently learning</small>
-                            <strong>Web Development</strong>
+                            <small>Identity</small>
+                            <strong>Developer</strong>
                         </div>
-
                     </div>
-
-
-                    <div class="mini-card glass-card">
-
-                        <span class="icon">✦</span>
-
+                    <div class="stat-card glass-card">
+                        <span class="stat-icon">🎌</span>
                         <div>
-                            <small>Based on</small>
-                            <strong>Earth, probably</strong>
+                            <small>Passion</small>
+                            <strong>Anime Fan</strong>
                         </div>
-
                     </div>
-
+                    <div class="stat-card glass-card">
+                        <span class="stat-icon">🚀</span>
+                        <div>
+                            <small>Hobby</small>
+                            <strong>Project Builder</strong>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <span class="stat-icon">☕</span>
+                        <div>
+                            <small>Lifestyle</small>
+                            <strong>Code & Chill</strong>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- SKILLS -->
         <section id="skills" class="section">
-
             <div class="section-header">
-
                 <span>02</span>
-
                 <div>
                     <p>WHAT I USE</p>
-                    <h2>Skills</h2>
+                    <h2>Tech Stack</h2>
                 </div>
-
             </div>
 
-
-            <div class="skills">
-
-                <div class="skill-card">
-                    <div class="skill-icon">HTML</div>
-                    <h3>HTML</h3>
-                    <p>Structure & semantics</p>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">H5</div>
+                            <h3>HTML5</h3>
+                            <p>Semantic markup</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">C3</div>
+                            <h3>CSS3</h3>
+                            <p>Modern styling</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">JS</div>
+                            <h3>JavaScript</h3>
+                            <p>Interactive logic</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">CSS</div>
-                    <h3>CSS</h3>
-                    <p>UI & visual design</p>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">C#</div>
+                            <h3>C#</h3>
+                            <p>Application dev</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">JS</div>
-                    <h3>JavaScript</h3>
-                    <p>Interactive web</p>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Database</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">SQL</div>
+                            <h3>SQL Server</h3>
+                            <p>Data management</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">C#</div>
-                    <h3>C#</h3>
-                    <p>Application development</p>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">Git</div>
+                            <h3>Git</h3>
+                            <p>Version control</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">GH</div>
+                            <h3>GitHub</h3>
+                            <p>Code hosting</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">VS</div>
+                            <h3>VS</h3>
+                            <p>Visual Studio</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">VSC</div>
+                            <h3>VS Code</h3>
+                            <p>Lightweight editor</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">SQL</div>
-                    <h3>SQL Server</h3>
-                    <p>Database systems</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">GIT</div>
-                    <h3>Git</h3>
-                    <p>Version control</p>
-                </div>
-
             </div>
-
         </section>
-
 
         <!-- PROJECTS -->
         <section id="projects" class="section">
-
             <div class="section-header">
-
                 <span>03</span>
-
                 <div>
                     <p>THINGS I'VE BUILT</p>
-                    <h2>Projects</h2>
+                    <h2>Featured Projects</h2>
                 </div>
-
             </div>
 
-
-            <div class="projects">
-
-
-                <article class="project featured">
-
-                    <div class="project-image manga">
-
-                        <div class="manga-glow"></div>
-
-                        <span>PROJECT 01</span>
-
-                        <strong>
-                            MANGA
-                            <br>
-                            STORE
-                        </strong>
-
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-visual">
+                        <div class="project-glow"></div>
+                        <div class="project-mockup">
+                            <div class="mockup-bar"><span></span><span></span><span></span></div>
+                            <div class="mockup-body">
+                                <div class="mockup-line short"></div>
+                                <div class="mockup-line"></div>
+                                <div class="mockup-line medium"></div>
+                                <div class="mockup-block"></div>
+                            </div>
+                        </div>
+                        <span class="project-number">01</span>
                     </div>
-
-
                     <div class="project-content">
-
-                        <span class="project-label">
-                            Graduation Project
-                        </span>
-
-                        <h3>
-                            Comic Management System
-                        </h3>
-
-                        <p>
-                            An online manga and comic management
-                            system with product management,
-                            customers, invoices and database integration.
-                        </p>
-
+                        <span class="project-label">Web App</span>
+                        <h3>Anime Website</h3>
+                        <p>A modern anime-themed website with interactive UI, character showcase, and smooth animations using vanilla HTML, CSS, and JavaScript.</p>
                         <div class="tags">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub <span>↗</span></a>
+                            <a href="#" class="project-link primary">Live Demo <span>↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <span class="project-label">Graduation Project</span>
+                        <h3>Manga Management System</h3>
+                        <p>A full-stack manga and comic management system with inventory, customer management, invoices, and SQL Server database integration.</p>
+                        <div class="tags">
+                            <span>C#</span>
                             <span>SQL Server</span>
                         </div>
-
-                        <a href="#" class="project-link">
-                            View project
-                            <span>↗</span>
-                        </a>
-
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub <span>↗</span></a>
+                        </div>
                     </div>
-
                 </article>
 
-
-                <article class="project">
-
+                <article class="project-card">
                     <div class="project-content">
-
-                        <span class="project-label">
-                            Personal
-                        </span>
-
-                        <h3>
-                            Aoi Kiyora Website
-                        </h3>
-
-                        <p>
-                            My personal anime-inspired developer
-                            portfolio built with vanilla web technologies.
-                        </p>
-
+                        <span class="project-label">Personal</span>
+                        <h3>Personal Portfolio</h3>
+                        <p>A personal anime-inspired developer portfolio built with clean HTML, CSS, and JavaScript. Dark mode, glassmorphism, and smooth interactions.</p>
                         <div class="tags">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
                         </div>
-
-                        <a
-                            href="https://github.com/aoikiyora"
-                            target="_blank"
-                            class="project-link"
-                        >
-                            GitHub
-                            <span>↗</span>
-                        </a>
-
+                        <div class="project-links">
+                            <a href="https://github.com/aoikiyora" target="_blank" rel="noopener" class="project-link">GitHub <span>↗</span></a>
+                            <a href="#" class="project-link primary">Live Demo <span>↗</span></a>
+                        </div>
                     </div>
-
                 </article>
 
-
-                <article class="project coming">
-
-                    <div class="coming-icon">
-                        ✦
+                <article class="project-card">
+                    <div class="project-content">
+                        <span class="project-label">Profile</span>
+                        <h3>GitHub Profile</h3>
+                        <p>My GitHub profile and open source contributions. Explore my repositories, projects, and coding journey on GitHub Pages.</p>
+                        <div class="tags">
+                            <span>GitHub Pages</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/aoikiyora" target="_blank" rel="noopener" class="project-link primary">Visit GitHub <span>↗</span></a>
+                        </div>
                     </div>
-
-                    <span class="project-label">
-                        Coming soon
-                    </span>
-
-                    <h3>
-                        Something new...
-                    </h3>
-
-                    <p>
-                        Another project is currently
-                        somewhere inside my brain.
-                    </p>
-
                 </article>
-
             </div>
-
         </section>
 
-
-        <!-- CONTACT -->
-        <section class="contact">
-
-            <div class="contact-card">
-
+        <!-- ANIME SECTION -->
+        <section id="anime" class="section anime-section">
+            <div class="section-header">
+                <span>04</span>
                 <div>
+                    <p>ENTERTAINMENT</p>
+                    <h2>Anime I Love 🎌</h2>
+                </div>
+            </div>
 
-                    <span class="project-label">
-                        HAVE AN IDEA?
-                    </span>
-
-                    <h2>
-                        Let's build something
-                        <span>cool.</span>
-                    </h2>
-
+            <div class="anime-grid">
+                <div class="anime-card">
+                    <div class="anime-image-wrapper">
+                        <img
+                            src="assets/Rintaro%20Tsumugi.jpg"
+                            alt="Rintaro Tsumugi"
+                            class="anime-image"
+                            loading="lazy"
+                        >
+                        <div class="anime-overlay">
+                            <span class="favorite-badge">⭐ Favorite</span>
+                        </div>
+                    </div>
+                    <div class="anime-info">
+                        <h3>Rintaro Tsumugi</h3>
+                        <p class="anime-title">Character</p>
+                        <div class="anime-rating">★★★★★</div>
+                        <p class="anime-desc">A beloved character known for charm and depth. One of my all-time favorites in anime.</p>
+                    </div>
+                    <div class="anime-border-glow"></div>
                 </div>
 
-                <a
-                    href="https://github.com/aoikiyora"
-                    target="_blank"
-                    class="btn primary"
-                >
-                    Find me on GitHub ↗
-                </a>
-
+                <div class="anime-card">
+                    <div class="anime-image-wrapper">
+                        <img
+                            src="assets/Waguri%20Kaoruko.jpg"
+                            alt="Waguri Kaoruko"
+                            class="anime-image"
+                            loading="lazy"
+                        >
+                        <div class="anime-overlay">
+                            <span class="favorite-badge">⭐ Favorite</span>
+                        </div>
+                    </div>
+                    <div class="anime-info">
+                        <h3>Waguri Kaoruko</h3>
+                        <p class="anime-title">Character</p>
+                        <div class="anime-rating">★★★★★</div>
+                        <p class="anime-desc">Another fantastic character with an incredible story. Always a joy to watch.</p>
+                    </div>
+                    <div class="anime-border-glow"></div>
+                </div>
             </div>
-
         </section>
 
+        <!-- FAVORITE CHARACTERS -->
+        <section class="section characters-section">
+            <div class="section-header">
+                <span>05</span>
+                <div>
+                    <p>TOP PICKS</p>
+                    <h2>My Favorite Characters</h2>
+                </div>
+            </div>
+
+            <div class="characters-grid">
+                <div class="character-showcase">
+                    <div class="showcase-image">
+                        <img
+                            src="assets/Rintaro%20Tsumugi.jpg"
+                            alt="Rintaro Tsumugi"
+                            loading="lazy"
+                        >
+                        <div class="showcase-glow"></div>
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge">#1 Favorite</span>
+                        <h3>Rintaro Tsumugi</h3>
+                        <p class="showcue-anime">Anime Character</p>
+                        <blockquote class="showcase-quote">"Code is like anime — there's always a new episode to look forward to."</blockquote>
+                    </div>
+                </div>
+
+                <div class="character-showcase">
+                    <div class="showcase-image">
+                        <img
+                            src="assets/Waguri%20Kaoruko.jpg"
+                            alt="Waguri Kaoruko"
+                            loading="lazy"
+                        >
+                        <div class="showcase-glow"></div>
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge">#2 Favorite</span>
+                        <h3>Waguri Kaoruko</h3>
+                        <p class="showcue-anime">Anime Character</p>
+                        <blockquote class="showcase-quote">"Debugging is just a plot twist in your coding story."</blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRENTLY LEARNING -->
+        <section class="section learning-section">
+            <div class="section-header">
+                <span>06</span>
+                <div>
+                    <p>GROWTH</p>
+                    <h2>Currently Learning</h2>
+                </div>
+            </div>
+
+            <div class="learning-grid">
+                <div class="learning-card glass-card">
+                    <div class="learning-header">
+                        <span class="learning-icon">JS</span>
+                        <span class="learning-name">JavaScript</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress: 85%"></div>
+                    </div>
+                    <span class="progress-label">Advanced</span>
+                </div>
+
+                <div class="learning-card glass-card">
+                    <div class="learning-header">
+                        <span class="learning-icon">C#</span>
+                        <span class="learning-name">C#</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress: 70%"></div>
+                    </div>
+                    <span class="progress-label">Intermediate</span>
+                </div>
+
+                <div class="learning-card glass-card">
+                    <div class="learning-header">
+                        <span class="learning-icon">SQL</span>
+                        <span class="learning-name">SQL Server</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress: 75%"></div>
+                    </div>
+                    <span class="progress-label">Intermediate</span>
+                </div>
+
+                <div class="learning-card glass-card">
+                    <div class="learning-header">
+                        <span class="learning-icon">🌐</span>
+                        <span class="learning-name">Web Development</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress: 90%"></div>
+                    </div>
+                    <span class="progress-label">Advanced</span>
+                </div>
+
+                <div class="learning-card glass-card">
+                    <div class="learning-header">
+                        <span class="learning-icon">🛠</span>
+                        <span class="learning-name">Git & GitHub</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress: 80%"></div>
+                    </div>
+                    <span class="progress-label">Advanced</span>
+                </div>
+
+                <div class="learning-card glass-card">
+                    <div class="learning-header">
+                        <span class="learning-icon">✨</span>
+                        <span class="learning-name">UI / UX Design</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="--progress: 65%"></div>
+                    </div>
+                    <span class="progress-label">Intermediate</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- GITHUB ACTIVITY -->
+        <section id="github" class="section github-section">
+            <div class="section-header">
+                <span>07</span>
+                <div>
+                    <p>OPEN SOURCE</p>
+                    <h2>GitHub Activity</h2>
+                </div>
+            </div>
+
+            <div class="github-stats">
+                <div class="github-card glass-card">
+                    <div class="github-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </div>
+                    <div class="github-data">
+                        <div class="github-stat">
+                            <span class="stat-value">8+</span>
+                            <span class="stat-label">Repositories</span>
+                        </div>
+                        <div class="github-stat">
+                            <span class="stat-value">5+</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="github-stat">
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                        <div class="github-stat">
+                            <span class="stat-value">5+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://github.com/aoikiyora" target="_blank" rel="noopener" class="github-cta btn primary">
+                    Visit GitHub
+                    <span>↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-card glass-card">
+                <div class="contact-text">
+                    <span class="contact-label">HAVE AN IDEA?</span>
+                    <h2>Let's Connect 💙</h2>
+                    <p>Feel free to reach out if you want to collaborate on a project, talk about anime, or just say hi!</p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="https://github.com/aoikiyora" target="_blank" rel="noopener" class="contact-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="mailto:your.email@example.com" class="contact-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email
+                    </a>
+                    <a href="#" class="contact-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+                        Discord
+                    </a>
+                    <a href="#" class="contact-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Facebook
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-
+    <!-- Footer -->
     <footer>
-
-        <span>
-            © <span id="year"></span> Aoi Kiyora
-        </span>
-
-        <span>
-            Made with ☕ & curiosity
-        </span>
-
+        <span>© <span id="year"></span> Aoi Kiyora</span>
+        <span>Made with ❤️ + ☕ + 🎌</span>
+        <a href="https://github.com/aoikiyora" target="_blank" rel="noopener" class="footer-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
     </footer>
 
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
 
     <script src="script.js"></script>
-
 </body>
 </html>
