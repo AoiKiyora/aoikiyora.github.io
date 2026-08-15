@@ -321,9 +321,17 @@ function initMusic() {
     }
   };
 
+  const tryPlay = () => {
+    audio.play().then(() => {
+      updateUI();
+    }).catch(() => {
+      updateUI();
+    });
+  };
+
   playBtn.addEventListener("click", () => {
     if (audio.paused) {
-      audio.play().catch(() => {});
+      tryPlay();
     } else {
       audio.pause();
     }
@@ -344,9 +352,20 @@ function initMusic() {
   audio.addEventListener("play", updateUI);
   audio.addEventListener("pause", updateUI);
 
-  audio.play().catch(() => {
-    updateUI();
-  });
+  tryPlay();
+
+  const playOnInteraction = () => {
+    if (audio.paused) {
+      tryPlay();
+    }
+    document.removeEventListener("click", playOnInteraction);
+    document.removeEventListener("touchstart", playOnInteraction);
+    document.removeEventListener("keydown", playOnInteraction);
+  };
+
+  document.addEventListener("click", playOnInteraction, { once: false });
+  document.addEventListener("touchstart", playOnInteraction, { once: false });
+  document.addEventListener("keydown", playOnInteraction, { once: false });
 }
 
 /* --- Init --- */
