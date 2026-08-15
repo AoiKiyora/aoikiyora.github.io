@@ -1,216 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aoi Kiyora — IT Developer, Creative Coder and Anime Fan.">
-    <meta name="theme-color" content="#07070c">
-    <title>Aoi Kiyora | IT Developer × Anime Fan</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AoiKiyora — Personal Bio</title>
+  <meta name="description" content="AoiKiyora's personal corner of the internet — links, projects, anime, games and more." />
+  <meta name="keywords" content="AoiKiyora, bio, personal, anime, coding, projects, links" />
+  <meta name="author" content="AoiKiyora" />
+
+  <meta property="og:title" content="AoiKiyora — Personal Bio" />
+  <meta property="og:description" content="AoiKiyora's personal corner of the internet — links, projects, anime, games and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aoikiyora.github.io/" />
+  <meta property="og:image" content="./assets/Banner.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AoiKiyora — Personal Bio" />
+  <meta name="twitter:description" content="AoiKiyora's personal corner of the internet — links, projects, anime, games and more." />
+  <meta name="twitter:image" content="./assets/Banner.jpg" />
+
+  <link rel="icon" href="./assets/Banner.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <canvas id="particles"></canvas>
 
-    <!-- Header / Navbar -->
-    <header id="header">
-        <nav class="navbar" id="navbar">
-            <a href="#home" class="logo">
-                <span class="logo-aoi">AOI</span>
-                <span class="logo-kiyora">KIYORA</span>
-            </a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#anime" class="nav-link">Anime</a></li>
-                <li><a href="#github" class="nav-link">GitHub</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">VN</button>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☾</button>
-                <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <p class="hero-greeting" data-i18n="hero_greeting">HELLO, I'M</p>
-                <h1 class="hero-name">
-                    <span class="hero-first">AOI</span>
-                    <span class="hero-last">KIYORA</span>
-                </h1>
-                <div class="hero-divider">
-                    <span class="hero-divider-line"></span>
-                    <span class="hero-divider-text">×</span>
-                    <span class="hero-divider-line"></span>
-                </div>
-                <div class="hero-roles">
-                    <span class="role" id="typing-text"></span>
-                    <span class="cursor">|</span>
-                </div>
-                <p class="hero-tagline" data-i18n="hero_tagline">Code. Create. Anime. Repeat.</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary" data-i18n="hero_explore">EXPLORE</a>
-                    <a href="https://github.com/aoikiyora" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero_github">GITHUB</a>
-                </div>
-            </div>
-            <div class="hero-scroll">
-                <a href="#about" aria-label="Scroll down">
-                    <span class="scroll-mouse">
-                        <span class="scroll-wheel"></span>
-                    </span>
-                </a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section about">
-            <div class="container">
-                <h2 class="section-title" data-i18n="about_title">
-                    <span class="title-number">01.</span> About Me
-                </h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p data-i18n="about_p1">I'm interested in programming, web development, technology and anime.</p>
-                        <p data-i18n="about_p2">I enjoy learning new things and building projects to improve my coding skills.</p>
-                        <p data-i18n="about_p3">Currently focusing on frontend development and creating cool web experiences.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section skills">
-            <div class="container">
-                <h2 class="section-title" data-i18n="skills_title">
-                    <span class="title-number">02.</span> Skills
-                </h2>
-                <div class="skills-grid" id="skills-grid">
-                    <!-- Rendered by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section projects">
-            <div class="container">
-                <h2 class="section-title" data-i18n="projects_title">
-                    <span class="title-number">03.</span> Projects
-                </h2>
-                <div class="projects-grid" id="projects-grid">
-                    <!-- Rendered by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Anime Section -->
-        <section id="anime" class="section anime">
-            <div class="container">
-                <h2 class="section-title" data-i18n="anime_title">
-                    <span class="title-number">04.</span> Anime World
-                </h2>
-                <div class="anime-grid" id="anime-grid">
-                    <!-- Rendered by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- GitHub Section -->
-        <section id="github" class="section github">
-            <div class="container">
-                <h2 class="section-title" data-i18n="github_title">
-                    <span class="title-number">05.</span> GitHub
-                </h2>
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        <span class="terminal-title" data-i18n="terminal_title">AOI@GITHUB:~</span>
-                    </div>
-                    <div class="terminal-body">
-                        <p class="terminal-line"><span class="terminal-prompt">AOI@GITHUB:~$</span> repositories</p>
-                        <p class="terminal-line"><span class="terminal-prompt">AOI@GITHUB:~$</span> projects</p>
-                        <p class="terminal-line"><span class="terminal-prompt">AOI@GITHUB:~$</span> code</p>
-                        <p class="terminal-line"><span class="terminal-prompt">AOI@GITHUB:~$</span> anime</p>
-                        <p class="terminal-line">&nbsp;</p>
-                        <p class="terminal-line" data-i18n="terminal_hint">Type 'help' in terminal for available commands.</p>
-                    </div>
-                </div>
-                <a href="https://github.com/aoikiyora" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="github_view">VIEW GITHUB</a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title" data-i18n="contact_title">
-                    <span class="title-number">06.</span> Contact
-                </h2>
-                <div class="contact-content">
-                    <p class="contact-text" data-i18n="contact_text">Get In Touch</p>
-                    <div class="contact-links">
-                        <a href="https://github.com/aoikiyora" target="_blank" rel="noopener noreferrer" class="contact-btn">
-                            <span class="contact-icon">⌘</span>
-                            <span data-i18n="contact_github">GitHub</span>
-                        </a>
-                        <a href="mailto:kayoru259@gmail.com" class="contact-btn">
-                            <span class="contact-icon">✉</span>
-                            <span data-i18n="contact_email">Email</span>
-                        </a>
-                        <a href="https://discord.com/invite/hxrQ4PTkWA" target="_blank" rel="noopener noreferrer" class="contact-btn">
-                            <span class="contact-icon">●</span>
-                            <span data-i18n="contact_discord">Discord</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-text" data-i18n="footer_text">© 2026 Aoi Kiyora</p>
-            <p class="footer-sub" data-i18n="footer_sub">Made with HTML • CSS • JavaScript</p>
-            <p class="footer-tagline" data-i18n="footer_tagline">Code. Create. Anime. Repeat.</p>
-        </div>
-    </footer>
-
-    <!-- Back to top -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
-
-    <!-- Terminal Easter Egg -->
-    <div class="terminal-overlay" id="terminal-overlay">
-        <div class="terminal-window terminal-egg">
-            <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        <span class="terminal-title" data-i18n="egg_terminal_title">TERMINAL — Ctrl+K to close</span>
-            </div>
-            <div class="terminal-body terminal-egg-body" id="terminal-output">
-                <p class="terminal-line" data-i18n="egg_welcome">Welcome to Aoi Kiyora's terminal.</p>
-                <p class="terminal-line" data-i18n="egg_help_hint">Type <span class="terminal-cmd">help</span> to see available commands.</p>
-                <p class="terminal-line">&nbsp;</p>
-            </div>
-            <div class="terminal-input-line">
-                <span class="terminal-prompt">AOI@TERMINAL:~$</span>
-                <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
-            </div>
-        </div>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">AoiKiyora</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li>
+          <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <script src="script.js"></script>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-banner" style="background-image: url('./assets/Banner.jpg');" role="img" aria-label="Banner"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="avatar-wrap">
+          <img src="./assets/Rintaro%20Tsumugi.jpg" alt="AoiKiyora avatar" class="avatar" loading="eager" />
+        </div>
+        <h1 class="hero-name">AoiKiyora</h1>
+        <p class="hero-sub">蒼井 清羅</p>
+        <p class="hero-username">@aoikiyora</p>
+        <p class="hero-bio">Just a person wandering between code, anime and the digital world.</p>
+        <span class="badge online">● Online</span>
+      </div>
+    </section>
+
+    <section class="section" id="links">
+      <h2 class="section-title">CONNECT WITH ME</h2>
+      <div class="grid" id="socialGrid"></div>
+    </section>
+
+    <section class="section" id="about">
+      <h2 class="section-title">ABOUT ME</h2>
+      <div class="glass-card">
+        <p class="about-text">
+          Hi, I'm AoiKiyora.<br />
+          I enjoy coding, anime, games and exploring things on the internet.<br />
+          This little corner of the internet is where I keep my links and projects.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="interests">
+      <h2 class="section-title">INTERESTS</h2>
+      <div class="tags">
+        <span class="tag">💻 Coding</span>
+        <span class="tag">🎨 Design</span>
+        <span class="tag">🎮 Gaming</span>
+        <span class="tag">🌸 Anime</span>
+        <span class="tag">🌐 Web</span>
+        <span class="tag">🎵 Music</span>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2 class="section-title">PROJECTS</h2>
+      <div class="grid" id="projectGrid"></div>
+    </section>
+
+    <section class="section" id="characters">
+      <h2 class="section-title">FAVORITE CHARACTERS</h2>
+      <div class="char-grid">
+        <div class="char-card">
+          <img src="./assets/Rintaro%20Tsumugi.jpg" alt="Rintaro Tsumugi" loading="lazy" />
+          <div class="char-overlay">
+            <span class="char-name">Rintaro Tsumugi</span>
+          </div>
+        </div>
+        <div class="char-card">
+          <img src="./assets/Waguri%20Kaoruko.jpg" alt="Waguri Kaoruko" loading="lazy" />
+          <div class="char-overlay">
+            <span class="char-name">Waguri Kaoruko</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="music">
+      <h2 class="section-title">NOW PLAYING</h2>
+      <div class="glass-card music-card">
+        <div class="music-left">
+          <div class="album-placeholder">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div class="music-bars" id="musicBars">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="music-info">
+          <p class="music-label">♫ Now Playing</p>
+          <p class="music-title">Chocolate Scramble</p>
+          <p class="music-artist">takehirotei</p>
+          <div class="progress-wrap">
+            <div class="progress" id="musicProgress"></div>
+          </div>
+        </div>
+        <button class="play-btn" id="playBtn" aria-label="Play">
+          <i class="fa-solid fa-play" id="playIcon"></i>
+        </button>
+      </div>
+      <audio id="bgAudio" src="./assets/audio.mp3" preload="auto" loop></audio>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 AoiKiyora</p>
+    <p>Made with ♥ and caffeine.</p>
+    <div class="footer-links" id="footerLinks"></div>
+    <p class="visitors"><span id="visitorCount">000000</span> visitors</p>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
