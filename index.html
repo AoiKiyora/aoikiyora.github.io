@@ -1,155 +1,119 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AoiKiyora — Personal Bio</title>
-  <meta name="description" content="AoiKiyora's personal corner of the internet — links, projects, anime, games and more." />
-  <meta name="keywords" content="AoiKiyora, bio, personal, anime, coding, projects, links" />
-  <meta name="author" content="AoiKiyora" />
-
-  <meta property="og:title" content="AoiKiyora — Personal Bio" />
-  <meta property="og:description" content="AoiKiyora's personal corner of the internet — links, projects, anime, games and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aoikiyora.github.io/" />
-  <meta property="og:image" content="./assets/Banner.jpg" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AoiKiyora — Personal Bio" />
-  <meta name="twitter:description" content="AoiKiyora's personal corner of the internet — links, projects, anime, games and more." />
-  <meta name="twitter:image" content="./assets/Banner.jpg" />
-
-  <link rel="icon" href="./assets/Banner.jpg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="Góc nhỏ của Aoi Kiyora — anime, âm nhạc và những điều mình yêu thích.">
+  <title>Aoi Kiyora — Anime &amp; Chill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <canvas id="particles"></canvas>
+  <div class="ambient ambient--violet" aria-hidden="true"></div>
+  <div class="ambient ambient--pink" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">AoiKiyora</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#links">Links</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li>
-          <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <main class="page-shell">
+    <article class="profile-card" id="profile-card" aria-labelledby="profile-name">
+      <header class="banner">
+        <img class="banner__image" src="assets/Banner.jpg" alt="Ảnh bìa anime của Aoi" fetchpriority="high">
+        <div class="banner__shade" aria-hidden="true"></div>
+        <a class="brand" href="#home" aria-label="Aoi Kiyora — về đầu trang"><span class="brand__mark" aria-hidden="true">✳</span> AOI<span class="brand__dot">.</span></a>
+        <span class="banner__tag"><span aria-hidden="true">✦</span> A LITTLE CORNER OF THE INTERNET</span>
+      </header>
 
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero-banner" style="background-image: url('./assets/Banner.jpg');" role="img" aria-label="Banner"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="avatar-wrap">
-          <img src="./assets/Rintaro%20Tsumugi.jpg" alt="AoiKiyora avatar" class="avatar" loading="eager" />
-        </div>
-        <h1 class="hero-name">AoiKiyora</h1>
-        <p class="hero-sub">蒼井 清羅</p>
-        <p class="hero-username">@aoikiyora</p>
-        <p class="hero-bio">Just a person wandering between code, anime and the digital world.</p>
-        <span class="badge online">● Online</span>
-      </div>
-    </section>
-
-    <section class="section" id="links">
-      <h2 class="section-title">CONNECT WITH ME</h2>
-      <div class="grid" id="socialGrid"></div>
-    </section>
-
-    <section class="section" id="about">
-      <h2 class="section-title">ABOUT ME</h2>
-      <div class="glass-card">
-        <p class="about-text">
-          Hi, I'm AoiKiyora.<br />
-          I enjoy coding, anime, games and exploring things on the internet.<br />
-          This little corner of the internet is where I keep my links and projects.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="interests">
-      <h2 class="section-title">INTERESTS</h2>
-      <div class="tags">
-        <span class="tag">💻 Coding</span>
-        <span class="tag">🎨 Design</span>
-        <span class="tag">🎮 Gaming</span>
-        <span class="tag">🌸 Anime</span>
-        <span class="tag">🌐 Web</span>
-        <span class="tag">🎵 Music</span>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <h2 class="section-title">PROJECTS</h2>
-      <div class="grid" id="projectGrid"></div>
-    </section>
-
-    <section class="section" id="characters">
-      <h2 class="section-title">FAVORITE CHARACTERS</h2>
-      <div class="char-grid">
-        <div class="char-card">
-          <img src="./assets/Rintaro%20Tsumugi.jpg" alt="Rintaro Tsumugi" loading="lazy" />
-          <div class="char-overlay">
-            <span class="char-name">Rintaro Tsumugi</span>
+      <div class="profile" id="home">
+        <section class="profile__top" aria-label="Thông tin hồ sơ">
+          <div class="avatar-wrap">
+            <img class="avatar" src="assets/Aoi.jpg" alt="Avatar Aoi Kiyora" fetchpriority="high">
+            <span class="online-dot" title="Đang online" aria-label="Đang online"></span>
           </div>
-        </div>
-        <div class="char-card">
-          <img src="./assets/Waguri%20Kaoruko.jpg" alt="Waguri Kaoruko" loading="lazy" />
-          <div class="char-overlay">
-            <span class="char-name">Waguri Kaoruko</span>
+          <div class="profile__intro">
+            <p class="eyebrow"><span aria-hidden="true">✦</span> WELCOME TO MY WORLD</p>
+            <h1 id="profile-name">Aoi <span>Kiyora</span></h1>
+            <p class="subtitle">Một chút anime, một chút âm nhạc <span aria-hidden="true">♡</span></p>
           </div>
-        </div>
-      </div>
-    </section>
+          <a class="bio-link" href="https://guns.lol/aoikiyora" target="_blank" rel="noopener noreferrer">
+            <span class="bio-link__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </span>
+            <span><small>FIND ME ON</small><strong>guns.lol</strong></span>
+          </a>
+        </section>
 
-    <section class="section" id="music">
-      <h2 class="section-title">NOW PLAYING</h2>
-      <div class="glass-card music-card">
-        <div class="music-left">
-          <div class="album-placeholder">
-            <i class="fa-solid fa-music"></i>
-          </div>
-          <div class="music-bars" id="musicBars">
-            <span></span><span></span><span></span><span></span>
-          </div>
+        <div class="divider" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+
+        <div class="content-grid">
+          <section class="about" aria-labelledby="about-title">
+            <h2 class="section-label" id="about-title"><span aria-hidden="true">✿</span> ABOUT ME</h2>
+            <p class="about__text">Xin chào, mình là <strong>Aoi</strong>! Chào mừng bạn ghé thăm góc nhỏ của mình. Mình thích anime, nghe nhạc và kết nối với những người bạn mới. Hãy chọn một nền tảng bên dưới để cùng trò chuyện nhé!</p>
+            <div class="interests" aria-label="Sở thích"><span>🌸 Anime</span><span>🎧 Music</span><span>🎮 Gaming</span></div>
+          </section>
+
+          <nav class="socials" aria-labelledby="socials-title">
+            <div class="socials__heading">
+              <h2 class="section-label" id="socials-title"><span aria-hidden="true">✿</span> LET'S CONNECT</h2>
+              <span>find me around</span>
+            </div>
+            <div class="social-grid">
+              <a class="social social--facebook" href="https://facebook.com/aoikiyora" target="_blank" rel="noopener noreferrer" aria-label="Facebook — Aoi Kiyora">
+                <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2v-2c0-.9.3-1.5 1.6-1.5h1.7V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.4H7.2v3.2H10V21z" fill="currentColor" stroke="none"/></svg>
+                <span>Facebook</span><svg class="social__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a class="social social--youtube" href="https://youtube.com/@aoikiyora" target="_blank" rel="noopener noreferrer" aria-label="YouTube — Aoi Kiyora">
+                <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.2V8.8l5.5 3.2z" fill="currentColor" stroke="none"/></svg>
+                <span>YouTube</span><svg class="social__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a class="social social--tiktok" href="https://tiktok.com/@aoikiyora" target="_blank" rel="noopener noreferrer" aria-label="TikTok — Aoi Kiyora">
+                <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3c.3 2.1 1.5 3.5 3.5 3.7v3.2a8 8 0 0 1-3.5-1v6.4a5.7 5.7 0 1 1-5-5.7v3.3a2.5 2.5 0 1 0 1.8 2.4V3z" fill="currentColor" stroke="none"/></svg>
+                <span>TikTok</span><svg class="social__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a class="social social--discord" href="https://discord.com/app" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 5.3A18 18 0 0 0 15.3 4l-.5 1a16 16 0 0 0-5.6 0l-.5-1a18 18 0 0 0-4.4 1.3C1.5 9.4.7 13.4 1.1 17.3a18 18 0 0 0 5.4 2.7l1.2-2a12 12 0 0 1-1.9-.9l.5-.4a13 13 0 0 0 11.4 0l.5.4-1.9.9 1.2 2a18 18 0 0 0 5.4-2.7c.5-4.5-.8-8.4-3.2-12Zm-11 9.6c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z" fill="currentColor" stroke="none"/></svg>
+                <span>Discord</span><svg class="social__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a class="social social--twitch" href="https://twitch.tv/aoikiyora" target="_blank" rel="noopener noreferrer" aria-label="Twitch — Aoi Kiyora">
+                <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h18v12l-5 5h-4l-3 3H7v-3H3V6zm2 2v13h4v3l3-3h4l3-3V5zm5 3h2v6h-2zm5 0h2v6h-2z" fill="currentColor" stroke="none"/></svg>
+                <span>Twitch</span><svg class="social__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a class="social social--osu" href="https://osu.ppy.sh/users/aoikiyora" target="_blank" rel="noopener noreferrer" aria-label="osu! profile — Aoi Kiyora">
+                <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+                <span>osu! profile</span><svg class="social__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a class="social social--guns" href="https://guns.lol/aoikiyora" target="_blank" rel="noopener noreferrer" aria-label="guns.lol — Aoi Kiyora">
+                <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9M13 3h8v8M21 3l-10 10"/></svg>
+                <span>guns.lol</span><svg class="social__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </nav>
         </div>
-        <div class="music-info">
-          <p class="music-label">♫ Now Playing</p>
-          <p class="music-title">Chocolate Scramble</p>
-          <p class="music-artist">takehirotei</p>
-          <div class="progress-wrap">
-            <div class="progress" id="musicProgress"></div>
+
+        <footer class="footer">
+          <div class="music-player" aria-label="Trình phát nhạc">
+            <button class="music-player__button" id="music-toggle" type="button" aria-label="Phát nhạc nền" aria-pressed="false">
+              <svg class="player-icon player-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z" fill="currentColor" stroke="none"/></svg>
+              <svg class="player-icon player-icon--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zm5 0h3v14h-3z" fill="currentColor" stroke="none"/></svg>
+            </button>
+            <div class="music-player__meta">
+              <div class="music-player__info"><span class="music-player__label">NOW PLAYING</span><strong>Little things, soft melodies</strong></div>
+              <div class="music-player__timeline" aria-label="Thời gian phát nhạc"><span id="current-time">0:00</span><span class="timeline-separator">/</span><span id="duration">--:--</span></div>
+            </div>
+            <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <label class="volume-control" for="volume-slider">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7m3-10a9 9 0 0 1 0 13"/></svg>
+              <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.65" aria-label="Âm lượng">
+            </label>
+            <audio id="background-music" src="assets/audio.mp3" preload="metadata" autoplay loop></audio>
           </div>
-        </div>
-        <button class="play-btn" id="playBtn" aria-label="Play">
-          <i class="fa-solid fa-play" id="playIcon"></i>
-        </button>
+          <p class="footer__note">made with <span aria-hidden="true">♡</span> &amp; a little bit of magic</p>
+        </footer>
       </div>
-      <audio id="bgAudio" src="./assets/audio.mp3" preload="auto" loop></audio>
-    </section>
+    </article>
+    <p class="page-note" aria-hidden="true">✦ &nbsp; STAY A LITTLE WHILE &nbsp; ✦</p>
   </main>
-
-  <footer class="footer">
-    <p>© 2026 AoiKiyora</p>
-    <p>Made with ♥ and caffeine.</p>
-    <div class="footer-links" id="footerLinks"></div>
-    <p class="visitors"><span id="visitorCount">000000</span> visitors</p>
-  </footer>
-
-  <script src="./script.js"></script>
 </body>
 </html>
