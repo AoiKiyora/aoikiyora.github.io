@@ -60,20 +60,16 @@ async function tryAutoplay() {
   try {
     await music.play();
     setPlaying(true);
-    document.removeEventListener("pointerdown", resumeAfterInteraction);
-    document.removeEventListener("keydown", resumeAfterInteraction);
   } catch {
     // Browsers may require a visitor gesture before allowing audio playback.
   }
 }
-
-function resumeAfterInteraction(event) {
-  if (event.target instanceof Element && event.target.closest("#music-toggle")) return;
-  void tryAutoplay();
-}
-
-document.addEventListener("pointerdown", resumeAfterInteraction);
-document.addEventListener("keydown", resumeAfterInteraction);
+window.addEventListener("pageshow", () => {
+  if (music.paused) void tryAutoplay();
+});
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && music.paused) void tryAutoplay();
+});
 
 function updateTilt(event) {
   if (reduceMotion.matches || !finePointer.matches) return;
